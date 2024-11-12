@@ -74,10 +74,30 @@ cd Velora
 npm install
 ```
 
-### 3. Start the development server
+### 3. Configure the environment variables
+
+Before running the development server, you need to configure the environment variables.
+
+You can read more about configuring the environment variables in the [Environment Variables section](#environment-variables).
+
+### 4. Start the server
+
+- For **development**, run:
 
 ```bash
 npm run dev
+```
+
+- For **production**, first build the application:
+
+```bash
+npm run build
+```
+
+Then, start the production server:
+
+```bash
+npm run start
 ```
 
 Once the server is running, open your browser and visit the following URLs:
@@ -87,20 +107,22 @@ Once the server is running, open your browser and visit the following URLs:
 
 ## 📜 Environment Variables
 
-To create a new `.env` file in the root of your project, start by making a copy of the existing `.env.example` file. You can do this by running the following command:
+### 🖥️ Development Configuration (`.env.local`)
+
+1. To set up your local development environment, copy the `.env.example` file to create a `.env.local` file:
 
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
-Next, open the `.env` file and replace the placeholder values with your actual keys:
+2. Next, open the `.env.local` file and replace the placeholder values with your actual keys:
 
 ```bash
 # Sanity configuration
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_sanity_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 
-# Base URL
+# Base URL (for local development)
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
 # Sanity Studio : This is NEEDED for sanity to see the required variables in the studio deployment
@@ -122,6 +144,21 @@ You can obtain these credentials by signing up on:
 - [Sanity](https://sanity.io/)
 - [Clerk](https://clerk.com/)
 - [Stripe](https://stripe.com/)
+
+### 🌍 Production/Deployment Configuration (`.env.production`)
+
+For deployment (production), you'll use a `.env.production` file, which should be configured similarly to `.env.local`, with the following important changes:
+
+1. Replace `NEXT_PUBLIC_BASE_URL` with your production domain URL:
+
+   - **For local development**, use: `NEXT_PUBLIC_BASE_URL=http://localhost:3000`
+   - **For production deployment**, use: `NEXT_PUBLIC_BASE_URL=https://your-production-domain.com`
+
+2. The rest of the configuration (Sanity, Clerk, Stripe) will remain the same, but ensure that the values are appropriate for the production environment.
+
+Once you've updated the `.env.production` file, push it to your server or deployment platform. The deployment platform will automatically pick up the environment variables from this file and use them during the build and runtime.
+
+---
 
 ## 📋 Snippets
 
