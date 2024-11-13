@@ -33,7 +33,7 @@
 - [📋 Snippets](#snippets)
 - [🔗 Links](#links)
 
-## ⚙️ Tech Stack
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
 Velora uses a modern tech stack to deliver a smooth and scalable experience:
 
@@ -47,7 +47,7 @@ Velora uses a modern tech stack to deliver a smooth and scalable experience:
 - **Zustand** for efficient state management.
 - **Framer Motion** for smooth animations.
 
-## 🔋 Features
+## <a name="features">🔋 Features</a>
 
 Velora comes with a suite of features to optimize the e-commerce experience:
 
@@ -59,7 +59,7 @@ Velora comes with a suite of features to optimize the e-commerce experience:
 - Responsive design with Tailwind CSS for both desktop and mobile.
 - Interactive animations using Framer Motion.
 
-## 🚀 Getting Started
+## <a name="getting-started">🚀 Getting Started</a>
 
 ### 1. Clone the repository
 
@@ -105,7 +105,7 @@ Once the server is running, open your browser and visit the following URLs:
 - To view the application, go to: `http://localhost:3000`
 - To access Sanity Studio for content management, visit: `http://localhost:3000/studio`
 
-## 📜 Environment Variables
+## <a name="environment-variables">📜 Environment Variables</a>
 
 ### 🖥️ Development Configuration (`.env.local`)
 
@@ -128,6 +128,10 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 # Sanity Studio : This is NEEDED for sanity to see the required variables in the studio deployment
 SANITY_STUDIO_PROJECT_ID=your_sanity_project_id
 SANITY_STUDIO_DATASET=production
+
+# Sanity live features
+SANITY_API_TOKEN=your_sanity_api_token
+SANITY_API_READ_TOKEN=your_sanity_api_read_token
 
 # Clerk configuration
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
@@ -160,11 +164,11 @@ Once you've updated the `.env.production` file, push it to your server or deploy
 
 ---
 
-## 📋 Snippets
+## <a name="snippets">📋 Snippets</a>
 
 Available soon 🛠️
 
-## 🔗 Links
+## <a name="links">🔗 Links</a>
 
 - [Live Demo](#) Available soon 🛠️
 - [Documentation](#) Available soon 🛠️
