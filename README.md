@@ -140,6 +140,7 @@ CLERK_SECRET_KEY=your_clerk_secret_key
 # Stripe configuration
 NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key
 STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 ```
 
 Ensure you replace `your_x_key` with your actual credentials.

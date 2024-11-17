@@ -488,7 +488,7 @@
         },
         "optional": true
       },
-      "StripePaymentIntentId": {
+      "stripePaymentIntentId": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
