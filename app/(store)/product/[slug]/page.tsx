@@ -5,9 +5,23 @@ import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import AddToBasketButton from "@/components/AddToBasketButton";
 
-async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+export const dynamic = "force-static";
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+async function ProductPage({
+  params,
+}: {
+  params: Promise<{
+    slug: string;
+  }>;
+}) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
+
+  console.log(
+    crypto.randomUUID().slice(0, 5) +
+      `>>> Rendered the product page cache for ${slug}`
+  );
 
   if (!product) {
     return notFound();
